@@ -1,9 +1,27 @@
-<h1>My cocktails!</h1>
+<div class = navbar-lewagon>
+<h1>My cocktails</h1>
+</div>
 
-<h3><%= link_to "Create new cocktail", new_cocktail_path %></h3>
+<div class="banner" style="background-image: url('/assets/crater.jpg');">
+  <div class="container">
+    <h1>Get inspired with new cocktail recipes</h1>
+    <p>Save and share your concoctions</p>
+    <a class="btn btn-flat" href="#"><%= link_to "Create new cocktail", new_cocktail_path %></a>
+  </div>
+</div>
 
+<div class = "container">
 <ul>
   <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail.id) %></li>
+    <li>
+      <div class="card-product">
+        <img src="/assets/mojito.jpg" />
+        <div class="card-product-infos">
+          <h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2>
+          <p>ingredients</p>
+        </div>
+      </div>
+    </li>
   <% end %>
 </ul>
+</div>
