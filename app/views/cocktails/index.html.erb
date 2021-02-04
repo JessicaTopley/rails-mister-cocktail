@@ -1,27 +1,25 @@
 <div class = navbar-lewagon>
-<h1>My cocktails</h1>
+<h2 class = "m-0">cocktailapp</h2>
 </div>
 
 <div class="banner" style="background-image: url('/assets/crater.jpg');">
   <div class="container">
     <h1>Get inspired with new cocktail recipes</h1>
     <p>Save and share your concoctions</p>
-    <a class="btn btn-flat" href="#"><%= link_to "Create new cocktail", new_cocktail_path %></a>
+    <%= link_to "Create new cocktail", new_cocktail_path, :class => "btn btn-primary" %>
   </div>
 </div>
 
 <div class = "container">
-<ul>
+<div class = "card-products">
   <% @cocktails.each do |cocktail| %>
-    <li>
       <div class="card-product">
-        <img src="/assets/mojito.jpg" />
+        <%= cl_image_tag cocktail.photo.key, :class => "card-product-img" %>
         <div class="card-product-infos">
           <h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2>
-          <p>ingredients</p>
+          <p>rating</p>
         </div>
       </div>
-    </li>
   <% end %>
-</ul>
+</div>
 </div>

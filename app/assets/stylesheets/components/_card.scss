@@ -1,3 +1,21 @@
+.card-products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+  margin: 50px;
+}
+
+@media (max-width: 992px) {
+  .card-products{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-products{
+    grid-template-columns: 1fr;
+  }
+}
 .card-product {
   overflow: hidden;
   height: 300px;
@@ -8,7 +26,7 @@
   border-radius: 8px;
 }
 
-.card-product img {
+.card-product-img {
   height: 230px;
   width: 100%;
   object-fit: cover;
