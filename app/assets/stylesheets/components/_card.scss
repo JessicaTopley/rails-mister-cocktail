@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 50px;
-  margin: 50px;
+  padding: 50px;
 }
 
 @media (max-width: 992px) {
@@ -23,11 +23,11 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // display: flex;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .card-product-img {
-  height: 230px;
+  height: 240px;
   width: 100%;
   object-fit: cover;
 }
@@ -36,6 +36,10 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .card-product p {
@@ -49,3 +53,4 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+

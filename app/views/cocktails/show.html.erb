@@ -1,20 +1,17 @@
 <div class="banner" style="background-image: url('<%= cl_image_path @cocktail.photo.key %>')">
   <div class="container">
     <h1><%= @cocktail.name %></h1>
+    <p><%= link_to "Back", root_path %></p>
   </div>
 </div>
  
-
-<div class = "container">
-  <div class = "card-product">
-  <h1>Ingredients</h1>
-  <% @cocktail.doses.each do |dose| %>
-    <h3><%= dose.description %> <%= dose.ingredient.name %></h3>
-    <%= link_to "delete", dose_path, method: :delete %>
-  <% end %>
-
-  <p><%= link_to "Add dose of ingredient", new_cocktail_dose_path(@cocktail) %></p>
+<div style="background-color: #C6B7A4; padding: 50px">
+  <div class = "container">
+    <h1>Ingredients</h1> 
+    <p><%= link_to "Add dose of ingredient", new_cocktail_dose_path(@cocktail) %></p>
+    <% @cocktail.doses.each do |dose| %>
+      <h2><%= dose.description %> <%= dose.ingredient.name %></h2>
+      <p><%= link_to "delete", dose_path, method: :delete, :class => "btn btn-primary" %><p>
+    <% end %>  
   </div>
-
-  <p><%= link_to "Back", root_path %></p>
 </div>
