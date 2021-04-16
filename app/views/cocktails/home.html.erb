@@ -5,3 +5,16 @@
     <%= link_to "Get started", cocktails_path, :class => "btn btn-primary" %>
   </div>
 </div>
+
+<div style="background-color: #C6B7A4;">
+<div class = "card-products">
+  <% @cocktails.each do |cocktail| %>
+      <div class="card-product">
+        <%= cl_image_tag cocktail.photo.key, :class => "card-product-img" %>
+        <div class="card-product-infos">
+          <h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2>
+        </div>
+      </div>
+  <% end %>
+</div>
+</div>

@@ -2,10 +2,11 @@ class CocktailsController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
+    @cocktails = Cocktail.all
   end 
   
   def index
-    @cocktails = Cocktail.all
+    @user = current_user
   end
 
   def new
@@ -25,7 +26,13 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
   end
 
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
+    redirect_to cocktails_path
+  end
+
   def cocktail_params
-    params.require(:cocktail).permit(:name, :photo)
+    params.require(:cocktail).permit(:name, :photo, :user_id)
   end
 end

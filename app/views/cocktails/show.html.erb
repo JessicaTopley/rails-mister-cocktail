@@ -2,6 +2,8 @@
   <div class="container">
     <h1><%= @cocktail.name %></h1>
     <p><%= link_to "Back", cocktails_path %></p>
+    <p><%= link_to  "Delete", cocktail_path(@cocktail),
+                method: :delete, data: { confirm: 'Are you sure?' } %></p>
   </div>
 </div>
  
