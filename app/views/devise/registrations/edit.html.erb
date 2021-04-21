@@ -10,6 +10,11 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+    <%= f.input :avatar, 
+        placeholder: 'Upload picture',
+        id: "change-img-field",
+        direct_upload: true %>
+
     <%= f.input :first_name, required: true, autofocus: true %>
 
     <%= f.input :second_name, required: true, autofocus: true %>

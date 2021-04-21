@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :cocktails, dependent: :destroy
   has_many :doses, through: :cocktails
+  has_one_attached :avatar
 end
