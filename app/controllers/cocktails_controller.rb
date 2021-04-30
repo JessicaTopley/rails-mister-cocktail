@@ -2,7 +2,11 @@ class CocktailsController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @cocktails = Cocktail.all
+     if params[:search].present?
+      @cocktails = Cocktail.perform_search(params[:search])
+    else
+      @cocktails = Cocktail.all
+    end
   end 
   
   def index
@@ -33,6 +37,6 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :photo, :user_id)
+    params.require(:cocktail).permit(:name, :photo, :user_id, :search)
   end
 end
