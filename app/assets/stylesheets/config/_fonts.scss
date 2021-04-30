@@ -1,11 +1,11 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&family=Inconsolata:wght@300&family=PT+Mono&display=swap');
 // @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 
 
 // Define fonts for body and headers
-$body-font: 'Montserrat', sans-serif;
-$headers-font: 'Montserrat', sans-serif;
+$body-font: 'IBM Plex Mono', monospace;
+$headers-font: 'IBM Plex Mono', monospace;
 // $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
@@ -17,3 +17,5 @@ $headers-font: 'Montserrat', sans-serif;
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+

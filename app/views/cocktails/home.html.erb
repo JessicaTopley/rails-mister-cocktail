@@ -1,20 +1,29 @@
 
-<div class="banner" style="background-color: #1D1814;">
+<div class="banner">
   <div class="container">
     <h1>For all your cocktail inspiration</h1>
     <%= link_to "Get started", cocktails_path, :class => "btn btn-primary" %>
   </div>
 </div>
 
-<div style="background-color: #C6B7A4;">
-<div class = "card-products">
-  <% @cocktails.each do |cocktail| %>
-      <div class="card-product">
-        <%= cl_image_tag cocktail.photo.key, :class => "card-product-img" %>
-        <div class="card-product-infos">
-          <h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2>
-        </div>
-      </div>
-  <% end %>
-</div>
+<h3>Search for cocktails</h3>
+<%= form_tag(root_path, method: :get) do %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag("Submit") %>
+<% end %>
+
+<div class="container">
+  <div class = "card-products">
+    <% @cocktails.each do |cocktail| %>
+        <%= link_to cocktail_path(cocktail.id), class: "cocktail-card-link" do %>
+          <div class="card-product">
+            <%= cl_image_tag cocktail.photo.key, :class => "card-product-img" %>
+            <div class="card-product-infos">
+              <h3><strong><%= cocktail.name %></strong></h3>
+              <h3><strong>Ingredients: <%= cocktail.doses.count %></strong></h3>
+            </div>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
 </div>
