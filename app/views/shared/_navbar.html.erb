@@ -21,6 +21,8 @@
     <% end %>
   <% end %>
 
+  <%= link_to "Create new cocktail", new_cocktail_path, :class => "button-grey" %>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
@@ -30,9 +32,9 @@
         <li class="nav-item active">
           <%= link_to "My cocktails", cocktails_path, class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
+        <div class="nav-item dropdown">
           <%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" /> %>
-          <div class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="avatar" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <% if current_user.avatar.attached? %>
               <%= image_tag(current_user.avatar, alt: "avatar", class: "avatar") %>
             <% else %>
@@ -43,8 +45,7 @@
             <%= link_to "My profile", pages_profile_path, class: "nav-link" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </div>
-        </li>
-
+        </div>
       <% else %>
         <li class="nav-item active">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
