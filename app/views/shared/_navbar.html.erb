@@ -1,11 +1,25 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <a class="navbar-brand" href="#">
-    <h3>Mr Cocktail</h3>
+    Mr Cocktail
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <%# <%= params.inspect %>
+
+  <% if ["home"].include?(params[:action]) %>
+    <%= form_tag(root_path, method: :get) do %>
+      <div class="input-group rounded">
+        <%= text_field_tag(:search, params[:search], class: 'form-control rounded', placeholder: "Search Cocktails...", arialabel: "Search", ariadescribedby: "search-addon") %>
+        <div class="input-group-btn">
+          <%= button_tag(type: "submit", class: "btn btn-default") do %>
+            <i class="fas fa-search"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -13,7 +27,7 @@
         <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <%= link_to "My cocktails", cocktails_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
