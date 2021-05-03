@@ -81,13 +81,18 @@
   // margin-bottom: 35px;
   // outline: 2px dashed blue;
   position: relative;
-  
+  margin-bottom: 6px;
+  &:hover {
+    background-color: $raisin-black;
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .card-product-img {
   width: 100% !important;
   height: auto !important;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
 // .card-product h2 {
@@ -112,7 +117,7 @@
   // background-color: $raisin-black;
   position: absolute;
   bottom: 0px;
-  color: $raisin-black;
+  color: inherit;
   padding: 8px 0px 8px 0px;
   display: flex;
   justify-content: space-between;
@@ -131,8 +136,7 @@
   color: $raisin-black;
   &:hover {
     text-decoration: none;
-    color: $raisin-black;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    color: white;
   }
 }
 

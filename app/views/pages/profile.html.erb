@@ -1,11 +1,13 @@
-<h1>Profile page</h1>
 
-<p><%= @user.first_name %><%= @user.second_name %></p>
+<div class="container">
+  <div>
+    <p><%= @user.first_name %><%= @user.second_name %></p>
+    <% if @user.avatar.attached? %>
+      <%= image_tag(current_user.avatar, alt: "avatar", class: "avatar", id: "avatar") %>
+    <% else %>
+      <%= image_tag 'default_avatar.png', class: "avatar" %>
+    <% end %> <br>
+  </div>
 
-<%= link_to "edit user info/ add profile picture", edit_user_registration_path, :class => "btn btn-primary" %>
-
-<% if @user.avatar.attached? %>
-  <%= image_tag(current_user.avatar, alt: "avatar", class: "avatar", id: "avatar") %>
-<% else %>
-  <%= image_tag 'default_avatar.png', class: "avatar" %>
-<% end %>
+  <%= link_to "edit user info/ add profile picture", edit_user_registration_path, :class => "button-grey" %>
+</div>
