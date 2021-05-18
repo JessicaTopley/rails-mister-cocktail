@@ -1,11 +1,12 @@
-<div class = "container">
-  <h2>Create your new cocktail</h2>
-  <%= simple_form_for @cocktail do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo, as: :file %>
-    <%= f.hidden_field :user_id, value: current_user.id%>
-    <%= f.submit class:"btn btn-primary" %>
-  <% end %>
-
-  <p><%= link_to "back", root_path %></p>
+<div class = "container d-flex justify-content-start">
+  <div class="w-50">
+    <h2>Create cocktail</h2>
+    <%= simple_form_for @cocktail do |f| %>
+      <%= f.input :name %>
+      <%= f.input :photo, as: :file %>
+      <%= f.hidden_field :user_id, value: current_user.id%>
+      <%= f.submit class:"button-greyborder mb-3" %>
+    <% end %>
+    <p><%= link_to "back", root_path %></p>
+  </div>
 </div>
