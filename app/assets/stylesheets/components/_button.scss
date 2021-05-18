@@ -18,3 +18,22 @@
     border: 2px solid $raisin-black;
   }
 }
+
+.button-greyborder {
+  background-color: white;
+  border: none;
+  color: $raisin-black;
+  padding: 6px 28px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 2px;
+  border: 2px solid $raisin-black;
+  &:hover {
+    text-decoration: none;
+    background-color: $light-grey;
+  }
+}

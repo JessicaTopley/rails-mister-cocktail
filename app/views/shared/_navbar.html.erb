@@ -1,5 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <a class="navbar-brand" href="#">
+    <%= image_tag("martini-icon.png", size: "40x40") %>
     Mr Cocktail
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +39,7 @@
             <% if current_user.avatar.attached? %>
               <%= image_tag(current_user.avatar, alt: "avatar", class: "avatar") %>
             <% else %>
-              <%= image_tag 'default_avatar.png', class: "avatar" %>
+              <%= image_tag 'default_avatar2.png', class: "avatar" %>
             <% end %>
           </div>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
