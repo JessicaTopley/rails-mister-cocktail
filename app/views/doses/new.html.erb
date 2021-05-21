@@ -1,5 +1,9 @@
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit class:"btn btn-primary" %>
-<% end %>
+<div class="container d-flex justify-content-start">
+  <div class="w-50">
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.input :description %>
+      <%= f.association :ingredient %>
+      <%= f.submit class:"button-greyborder" %>
+    <% end %>
+  </div>
+</div>
