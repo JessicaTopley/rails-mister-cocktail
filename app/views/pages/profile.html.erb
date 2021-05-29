@@ -1,13 +1,24 @@
 
 <div class="container">
-  <div>
-    <p><%= @user.first_name %><%= @user.second_name %></p>
-    <% if @user.avatar.attached? %>
-      <%= image_tag(current_user.avatar, alt: "avatar", class: "avatar", id: "avatar") %>
-    <% else %>
-      <%= image_tag 'default_avatar2.png', class: "avatar" %>
-    <% end %> <br>
+  <div class="grey-box">
+    <div class="d-flex">
+      <div class="mr-3">
+        <% if @user.avatar.attached? %>
+          <div>
+            <%= image_tag(current_user.avatar, class: "avatar-large", alt: "avatar") %>
+          </div>
+        <% else %>
+          <%= image_tag 'default_avatar2.png', class: "avatar" %>
+        <% end %> <br>
+      </div>
+      <div>
+        <p><strong><%= @user.email %></strong></p>
+        <%= @user.first_name %>
+        <%= @user.second_name %> <br>
+        Signed up since <%= @user.created_at.to_date %>
+      </div>
+    </div>
+    <%= link_to "edit profile / add profile picture", edit_user_registration_path, :class => "button-grey-small" %>
   </div>
 
-  <%= link_to "edit user info/ add profile picture", edit_user_registration_path, :class => "button-grey" %>
 </div>
