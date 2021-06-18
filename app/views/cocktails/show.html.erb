@@ -17,7 +17,7 @@
       <div class="d-flex">
         <%= image_tag("martini-icon.png", size: "16x16", class: "mt-1 mr-2") %>
         <p><%= dose.description %> <%= dose.ingredient.name %></p>
-        <p><%= link_to dose_path, method: :delete, class: "icon-style-small" do %>
+        <p><%= link_to dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' }, class: "icon-style-small" do %>
           <i class="far fa-trash-alt"></i>
         <% end %><p>
       </div>
